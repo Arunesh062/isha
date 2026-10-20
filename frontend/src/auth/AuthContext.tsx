@@ -66,7 +66,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (signInError) {
       const msg = signInError.message?.toLowerCase() || '';
       if (msg.includes('invalid login credentials') || msg.includes('invalid credentials')) {
-        setError('Incorrect email or password. Please double-check your credentials and try again.');
+        setError('Incorrect email or password. (If you just signed up, your email may require confirmation first).');
       } else if (msg.includes('email not confirmed')) {
         setError('Please check your inbox to confirm your email address before signing in.');
       } else if (signInError.message) {
@@ -81,7 +81,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const signUp = async (email: string, password: string, fullName: string) => {
     setError('');
-    const { error: signUpError } = await supabase.auth.signUp({
+    const { data, error: signUpError } = await supabase.auth.signUp({
       email,
       password,
       options: { data: { full_name: fullName } },
@@ -90,7 +90,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const code = (signUpError as unknown as { code?: string }).code;
       const msg = signUpError.message?.toLowerCase() || '';
 
-      if (code === 'weak_password' || msg.includes('weak') || msg.includes('pwned') || msg.includes('compromised')) {
+      if (code === 'over_email_send_rate_limit' || msg.includes('rate limit')) {
+        setError('Email sending limit reached on Supabase (max 3/hour on free tier). Disable "Confirm email" in Supabase Dashboard > Authentication > Providers > Email for unlimited signups.');
+      } else if (code === 'weak_password' || msg.includes('weak') || msg.includes('pwned') || msg.includes('compromised')) {
         setError('This password is too common or easily guessed. Please choose a stronger password (e.g. mix letters, numbers, and symbols).');
       } else if (code === 'user_already_exists' || msg.includes('already registered') || msg.includes('already exists')) {
         setError('An account with this email address already exists. Please switch to "Sign in" above.');

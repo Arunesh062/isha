@@ -57,7 +57,16 @@ export default function AuthModal({ open, onClose }: AuthModalProps) {
               <button onClick={() => { setMode('signin'); clearError(); setSubmitted(false); }} className={`rounded-sm py-2 text-sm font-medium ${mode === 'signin' ? 'bg-white text-primary-900 shadow-sm' : 'text-primary-500'}`}>Sign in</button>
               <button onClick={() => { setMode('signup'); clearError(); setSubmitted(false); }} className={`rounded-sm py-2 text-sm font-medium ${mode === 'signup' ? 'bg-white text-primary-900 shadow-sm' : 'text-primary-500'}`}>Sign up</button>
             </div>
-            {submitted && <div className="mb-4 rounded-sm bg-sage-50 p-3 text-sm text-sage-800">Your account is ready. You can continue shopping.</div>}
+            {submitted && mode === 'signup' && !user && (
+              <div className="mb-4 rounded-sm border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800">
+                Account created! A confirmation email has been sent. Please confirm your email before signing in (or disable "Confirm email" in Supabase settings for instant sign-ins).
+              </div>
+            )}
+            {submitted && (mode === 'signin' || user) && (
+              <div className="mb-4 rounded-sm bg-sage-50 p-3 text-sm text-sage-800">
+                Your account is ready. You can continue shopping.
+              </div>
+            )}
             {error && <div className="mb-4 rounded-sm bg-red-50 p-3 text-sm text-red-700">{error}</div>}
             <form onSubmit={handleSubmit} className="space-y-4">
               {mode === 'signup' && <label className="block text-sm text-primary-700"><span className="mb-1.5 block font-medium">Full name</span><span className="relative block"><UserRound className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-primary-400" /><input required value={fullName} onChange={(e) => setFullName(e.target.value)} className="w-full rounded-sm border border-primary-200 bg-white py-3 pl-10 pr-3 text-sm outline-none focus:border-primary-500" placeholder="Your name" /></span></label>}
