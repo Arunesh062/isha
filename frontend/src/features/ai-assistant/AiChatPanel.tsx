@@ -175,7 +175,7 @@ export default function AiChatPanel({ onViewProduct, currentProductId }: AiChatP
           role="dialog"
           aria-modal="true"
           aria-label="Sattva Life AI Shopping Assistant"
-          className="fixed bottom-4 right-4 left-4 sm:left-auto sm:w-[420px] h-[580px] max-h-[85vh] z-40 bg-warmwhite rounded-lg shadow-2xl border border-primary-200/90 flex flex-col overflow-hidden animate-scale-in"
+          className="fixed bottom-4 right-4 left-4 sm:left-auto sm:w-[420px] h-[min(540px,calc(100vh-5rem))] max-h-[calc(100vh-5rem)] z-50 bg-warmwhite rounded-lg shadow-2xl border border-primary-200/90 flex flex-col overflow-hidden animate-scale-in"
         >
           {/* Header */}
           <div className="bg-primary-900 text-white px-4 py-3.5 flex items-center justify-between shadow-sm shrink-0">

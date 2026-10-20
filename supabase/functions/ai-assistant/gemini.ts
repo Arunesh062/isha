@@ -12,7 +12,7 @@
 import type { ChatHistoryMessage, SearchQueryInterpretation } from './types.ts';
 import type { AuthoritativeProduct } from './catalog.ts';
 
-export const DEFAULT_GEMINI_MODEL = 'gemini-2.5-flash';
+export const DEFAULT_GEMINI_MODEL = 'gemini-3.5-flash';
 
 export class GeminiError extends Error {
   public statusCode: number;
@@ -70,7 +70,7 @@ export interface GeminiApiCallParams {
  * Low-level caller for Gemini generateContent REST endpoint.
  */
 export async function callGeminiApi(params: GeminiApiCallParams): Promise<string> {
-  const { apiKey, systemInstruction, contents, jsonMode = false, timeoutMs = 15000 } = params;
+  const { apiKey, systemInstruction, contents, jsonMode = false, timeoutMs = 30000 } = params;
 
   if (!apiKey || !apiKey.trim()) {
     throw new GeminiError(
@@ -81,14 +81,15 @@ export async function callGeminiApi(params: GeminiApiCallParams): Promise<string
     );
   }
 
-  const model = params.model || getGeminiModel();
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`;
+  const modelToUse = params.model || getGeminiModel() || 'gemini-3.5-flash';
+  const cleanModel = modelToUse.startsWith('models/') ? modelToUse.slice(7) : modelToUse;
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(cleanModel)}:generateContent?key=${encodeURIComponent(apiKey.trim())}`;
 
   const requestBody: Record<string, unknown> = {
     contents,
     generationConfig: {
       temperature: 0.2,
-      maxOutputTokens: 1024,
+      maxOutputTokens: 512,
       ...(jsonMode ? { responseMimeType: 'application/json' } : {}),
     },
   };
@@ -108,10 +109,7 @@ export async function callGeminiApi(params: GeminiApiCallParams): Promise<string
   try {
     response = await fetchImpl(url, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-goog-api-key': apiKey.trim(),
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(requestBody),
       signal: controller.signal,
     });
@@ -120,7 +118,7 @@ export async function callGeminiApi(params: GeminiApiCallParams): Promise<string
     const isAbort = err instanceof Error && (err.name === 'AbortError' || err.message.includes('aborted'));
     if (isAbort) {
       throw new GeminiError(
-        'Gemini API request timed out after ' + timeoutMs + 'ms',
+        'Gemini API request timed out after ' + timeoutMs + 'ms (model: ' + cleanModel + ')',
         504,
         'PROVIDER_TIMEOUT',
         'The AI assistant took too long to respond. Please try again.'

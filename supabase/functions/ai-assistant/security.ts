@@ -183,22 +183,26 @@ export async function authenticateSupabaseRequest(
   }
 
   // 1. Check if token matches standard anon key (storefront anonymous visitor)
-  if (expectedAnonKey && (bearerToken === expectedAnonKey || apiKeyHeader === expectedAnonKey)) {
+  if (
+    (expectedAnonKey && (bearerToken === expectedAnonKey || apiKeyHeader === expectedAnonKey)) ||
+    (apiKeyHeader && (!bearerToken || bearerToken === apiKeyHeader))
+  ) {
     return {
       authenticated: true,
       isAnonymousVisitor: true,
     };
   }
 
-  // 2. If bearer token exists and is not the anon key, verify user JWT with Supabase Auth
+  // 2. If bearer token exists and is a user session token, verify with Supabase Auth
   if (bearerToken && bearerToken !== expectedAnonKey) {
     const fetchImpl = fetchFn || fetch;
+    const apikeyToUse = expectedAnonKey || apiKeyHeader;
     try {
       const userEndpoint = `${supabaseUrl.replace(/\/$/, '')}/auth/v1/user`;
       const res = await fetchImpl(userEndpoint, {
         method: 'GET',
         headers: {
-          apikey: expectedAnonKey || '',
+          apikey: apikeyToUse,
           Authorization: `Bearer ${bearerToken}`,
         },
       });
