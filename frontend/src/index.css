@@ -15,7 +15,7 @@
 
 @layer components {
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-10 2xl:px-14;
   }
   .btn-primary {
     @apply bg-primary-600 text-white px-6 py-3 rounded-sm font-medium text-sm tracking-wide hover:bg-primary-700 transition-colors duration-200;

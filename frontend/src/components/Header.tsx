@@ -89,7 +89,7 @@ export default function Header({
             {/* Search bar - desktop */}
             <form
               onSubmit={handleSearchSubmit}
-              className="hidden md:flex flex-1 max-w-xl mx-4"
+              className="hidden md:flex flex-1 max-w-2xl mx-4 lg:mx-8"
             >
               <div className="relative w-full">
                 <input

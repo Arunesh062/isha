@@ -62,7 +62,29 @@ export default function AuthModal({ open, onClose }: AuthModalProps) {
             <form onSubmit={handleSubmit} className="space-y-4">
               {mode === 'signup' && <label className="block text-sm text-primary-700"><span className="mb-1.5 block font-medium">Full name</span><span className="relative block"><UserRound className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-primary-400" /><input required value={fullName} onChange={(e) => setFullName(e.target.value)} className="w-full rounded-sm border border-primary-200 bg-white py-3 pl-10 pr-3 text-sm outline-none focus:border-primary-500" placeholder="Your name" /></span></label>}
               <label className="block text-sm text-primary-700"><span className="mb-1.5 block font-medium">Email address</span><span className="relative block"><Mail className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-primary-400" /><input required type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full rounded-sm border border-primary-200 bg-white py-3 pl-10 pr-3 text-sm outline-none focus:border-primary-500" placeholder="you@example.com" /></span></label>
-              <label className="block text-sm text-primary-700"><span className="mb-1.5 block font-medium">Password</span><span className="relative block"><LockKeyhole className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-primary-400" /><input required minLength={6} type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => setPassword(e.target.value)} className="w-full rounded-sm border border-primary-200 bg-white py-3 pl-10 pr-10 text-sm outline-none focus:border-primary-500" placeholder="At least 6 characters" /><button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-1/2 -translate-y-1/2 text-primary-400" aria-label="Toggle password visibility">{showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}</button></span></label>
+              <label className="block text-sm text-primary-700">
+                <span className="mb-1.5 block font-medium">Password</span>
+                <span className="relative block">
+                  <LockKeyhole className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-primary-400" />
+                  <input
+                    required
+                    minLength={6}
+                    type={showPassword ? 'text' : 'password'}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="w-full rounded-sm border border-primary-200 bg-white py-3 pl-10 pr-10 text-sm outline-none focus:border-primary-500"
+                    placeholder={mode === 'signup' ? 'Choose a strong password (min 6 chars)' : 'Enter your password'}
+                  />
+                  <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-1/2 -translate-y-1/2 text-primary-400" aria-label="Toggle password visibility">
+                    {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                  </button>
+                </span>
+                {mode === 'signup' && (
+                  <span className="mt-1 block text-[11px] text-primary-400">
+                    Use at least 6 characters (avoid common sequences like 123456).
+                  </span>
+                )}
+              </label>
               <button disabled={busy} className="w-full rounded-sm bg-primary-700 px-5 py-3.5 text-sm font-medium tracking-wide text-white hover:bg-primary-800 disabled:cursor-wait disabled:bg-primary-300">{busy ? 'Please wait…' : mode === 'signin' ? 'Sign in' : 'Create account'}</button>
             </form>
           </>

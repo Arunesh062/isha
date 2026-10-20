@@ -64,7 +64,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setError('');
     const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
     if (signInError) {
-      setError('We could not sign you in. Check your email and password and try again.');
+      const msg = signInError.message?.toLowerCase() || '';
+      if (msg.includes('invalid login credentials') || msg.includes('invalid credentials')) {
+        setError('Incorrect email or password. Please double-check your credentials and try again.');
+      } else if (msg.includes('email not confirmed')) {
+        setError('Please check your inbox to confirm your email address before signing in.');
+      } else if (signInError.message) {
+        setError(signInError.message);
+      } else {
+        setError('We could not sign you in. Check your email and password and try again.');
+      }
       return false;
     }
     return true;
@@ -78,7 +87,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       options: { data: { full_name: fullName } },
     });
     if (signUpError) {
-      setError('We could not create your account. Please check your details and try again.');
+      const code = (signUpError as unknown as { code?: string }).code;
+      const msg = signUpError.message?.toLowerCase() || '';
+
+      if (code === 'weak_password' || msg.includes('weak') || msg.includes('pwned') || msg.includes('compromised')) {
+        setError('This password is too common or easily guessed. Please choose a stronger password (e.g. mix letters, numbers, and symbols).');
+      } else if (code === 'user_already_exists' || msg.includes('already registered') || msg.includes('already exists')) {
+        setError('An account with this email address already exists. Please switch to "Sign in" above.');
+      } else if (signUpError.message) {
+        setError(signUpError.message);
+      } else {
+        setError('We could not create your account. Please check your details and try again.');
+      }
       return false;
     }
     return true;
