@@ -1,0 +1,16 @@
+{
+  "name": "sattva-life-workspace",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "lint": "npm --prefix frontend run lint",
+    "typecheck": "npm --prefix frontend run typecheck",
+    "preview": "npm --prefix frontend run preview",
+    "test": "node --experimental-strip-types --test tests/unit/ai-assistant.test.mjs tests/unit/frontend-ai.test.mjs"
+  }
+}
+
+

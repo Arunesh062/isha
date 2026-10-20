@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cream text-primary-900 font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .btn-primary {
+    @apply bg-primary-600 text-white px-6 py-3 rounded-sm font-medium text-sm tracking-wide hover:bg-primary-700 transition-colors duration-200;
+  }
+  .btn-outline {
+    @apply border border-primary-300 text-primary-800 px-6 py-3 rounded-sm font-medium text-sm tracking-wide hover:bg-primary-50 transition-colors duration-200;
+  }
+  .section-title {
+    @apply font-serif text-3xl md:text-4xl font-semibold text-primary-900 text-center;
+  }
+  .section-subtitle {
+    @apply text-sm md:text-base text-primary-600 text-center mt-2;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f5e8d8;
+}
+::-webkit-scrollbar-thumb {
+  background: #c98c50;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b8742f;
+}
