@@ -1,4 +1,4 @@
-# Isha Life — Database Architecture & Migrations (Unofficial Demonstration)
+# Isha Life — Database Architecture & Migrations
 
 This folder organizes all database-related assets, migrations, schema definitions, and seed scripts for the Isha Life PostgreSQL / Supabase database.
 

@@ -44,12 +44,6 @@ export default function Header({
 
   return (
     <>
-      {/* Independent Unofficial Demonstration Banner */}
-      <div className="bg-amber-950 text-amber-200 text-[11px] sm:text-xs py-1.5 px-4 text-center font-medium border-b border-amber-900 flex items-center justify-center gap-2">
-        <span className="inline-block w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-        <span>Independent Unofficial Demonstration · Not affiliated with or authorized by Isha Life</span>
-      </div>
-
       {/* Announcement Bar */}
       <div className="bg-primary-900 text-cream text-xs sm:text-sm py-2 overflow-hidden">
         <div className="container-custom flex items-center justify-center gap-6 text-center">
@@ -87,10 +81,7 @@ export default function Header({
                 <span className="font-serif text-white text-xl font-bold">I</span>
               </div>
               <div className="hidden sm:block text-left">
-                <div className="flex items-center gap-1.5">
-                  <span className="font-serif text-2xl font-bold text-primary-900 leading-none">Isha</span>
-                  <span className="text-[9px] uppercase font-semibold tracking-wider px-1.5 py-0.5 rounded bg-amber-100 text-amber-900 border border-amber-300">Demo</span>
-                </div>
+                <div className="font-serif text-2xl font-bold text-primary-900 leading-none">Isha</div>
                 <div className="text-[10px] tracking-[0.2em] text-primary-500 uppercase">Life</div>
               </div>
             </button>

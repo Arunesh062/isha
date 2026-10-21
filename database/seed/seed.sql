@@ -1,5 +1,5 @@
 -- ====================================================================
--- Isha Life Seed Data: Categories and Products (Unofficial Demonstration)
+-- Isha Life Seed Data: Categories and Products
 -- ====================================================================
 
 -- 1. Categories

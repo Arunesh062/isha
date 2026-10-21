@@ -1,4 +1,4 @@
-# Isha Life — Requirements Specification (Unofficial Demonstration)
+# Isha Life — Requirements Specification
 
 ## 1. Functional Requirements
 

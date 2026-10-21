@@ -1,5 +1,5 @@
 -- ====================================================================
--- Isha Life Full PostgreSQL Database Schema (Unofficial Demonstration)
+-- Isha Life Full PostgreSQL Database Schema
 -- Target: PostgreSQL 15+ / Supabase
 -- ====================================================================
 

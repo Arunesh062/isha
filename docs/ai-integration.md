@@ -1,4 +1,4 @@
-# Isha Life — Gemini AI Integration Specification (Phase 2, Unofficial Demonstration)
+# Isha Life — Gemini AI Integration Specification (Phase 2)
 
 ## 1. Overview & Objectives
 

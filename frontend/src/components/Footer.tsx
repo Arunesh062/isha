@@ -53,10 +53,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 <span className="font-serif text-white text-xl font-bold">I</span>
               </div>
               <div>
-                <div className="flex items-center gap-1.5">
-                  <span className="font-serif text-2xl font-bold text-cream leading-none">Isha</span>
-                  <span className="text-[9px] uppercase font-semibold tracking-wider px-1.5 py-0.5 rounded bg-amber-900/80 text-amber-200 border border-amber-700">Demo</span>
-                </div>
+                <div className="font-serif text-2xl font-bold text-cream leading-none">Isha</div>
                 <div className="text-[10px] tracking-[0.2em] text-primary-300 uppercase">Life</div>
               </div>
             </div>
@@ -116,13 +113,6 @@ export default function Footer({ onNavigate }: FooterProps) {
               </ul>
             </div>
           ))}
-
-          {/* Unofficial Demo Disclaimer Box */}
-          <div className="lg:col-span-5 pt-4">
-            <div className="bg-primary-900/70 border border-primary-800 rounded-sm p-4 text-xs text-primary-200 leading-relaxed">
-              <strong className="text-cream font-medium">Independent Demonstration Notice:</strong> This website is an independent, unofficial technology and e-commerce demonstration project. It is not affiliated with, endorsed by, sponsored by, or authorized to represent Isha Life, Isha Foundation, or their affiliates. All trademarks, product names, and brand references are the property of their respective owners.
-            </div>
-          </div>
         </div>
       </div>
 
@@ -130,7 +120,7 @@ export default function Footer({ onNavigate }: FooterProps) {
       <div className="border-t border-primary-800">
         <div className="container-custom py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-primary-300">
-            © {new Date().getFullYear()} Isha Life Demonstration (Unofficial). All rights reserved. For Conscious Living.
+            © {new Date().getFullYear()} Isha Life. All rights reserved. For Conscious Living.
           </p>
           <div className="flex items-center gap-4 text-xs text-primary-300">
             <span>Secure Payments</span>

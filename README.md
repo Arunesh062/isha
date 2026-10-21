@@ -1,6 +1,4 @@
-# Isha Life — Holistic E-Commerce Platform (Unofficial Demonstration)
-
-> **Independent Demonstration Notice**: This project is an independent, unofficial technology and e-commerce demonstration. It is not affiliated with, endorsed by, sponsored by, or authorized to represent Isha Life, Isha Foundation, or their affiliates. All brand names and trademarks belong to their respective holders.
+# Isha Life — Holistic E-Commerce Platform
 
 A production-grade, holistic e-commerce web application built with **React**, **TypeScript**, **Vite**, **Tailwind CSS**, and **Supabase**.
 

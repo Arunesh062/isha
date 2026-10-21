@@ -1,7 +1,7 @@
-# Isha Life — Architecture & Project Structure (Unofficial Demonstration)
+# Isha Life — Architecture & Project Structure
 
 ## 1. Overview
-Isha Life (Unofficial Demonstration) is an e-commerce platform dedicated to holistic living, natural wellness, and yogic essentials. It is architected as a clean modern monorepo separating:
+Isha Life is an e-commerce platform dedicated to holistic living, natural wellness, and yogic essentials. It is architected as a clean modern monorepo separating:
 - **`frontend/`**: Single Page Application (SPA) built with React 18, TypeScript 5, Vite 5, and Tailwind CSS.
 - **`backend/`**: Managed BaaS services (Supabase PostgreSQL, PostgREST, Auth).
 - **`database/`**: Canonical schema definitions, SQL migrations, and catalog seed scripts.
