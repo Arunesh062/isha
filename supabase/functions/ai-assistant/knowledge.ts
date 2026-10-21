@@ -36,7 +36,7 @@ export const VERIFIED_FAQS: KnowledgeEntry[] = [
     id: 'faq-natural-organic',
     topic: 'Products',
     question: 'Are your products natural and organic?',
-    answer: 'All Sattva Life products are formulated with natural ingredients free of harsh synthetic chemicals. Products that are certified organic carry clear certification badges and details on their product pages.',
+    answer: 'All Isha Life products are formulated with natural ingredients free of harsh synthetic chemicals. Products that are certified organic carry clear certification badges and details on their product pages.',
     ownerApproved: true,
   },
   {
@@ -168,13 +168,13 @@ export function buildChatSystemPrompt(): string {
     .map((c) => `Category "${c.name}":\n- Summary: ${c.summary}\n- Benefits: ${c.wellnessBenefits.join('; ')}\n- Tips: ${c.shoppingTips.join('; ')}`)
     .join('\n\n');
 
-  return `You are the Sattva Life AI Shopping & Wellness Assistant.
-Sattva Life is an authentic Indian Ayurvedic and yogic wellness e-commerce store.
+  return `You are the Isha Life AI Shopping & Wellness Assistant.
+Isha Life is an authentic Indian Ayurvedic and yogic wellness e-commerce store.
 Your goal is to assist customers with discovering products, understanding their ingredients and traditional benefits, and clarifying store policies.
 
 CORE OPERATIONAL RULES:
 1. STRICT GROUNDING: You MUST base your answers ONLY on the VERIFIED STORE POLICIES and the AUTHORITATIVE CATALOGUE PROVIDED in the prompt.
-2. UNVERIFIED INFORMATION: Return policy, refund timelines, courier delivery duration/SLAs, and courier SMS/email tracking links are NOT currently confirmed store policies. If a customer asks about returns, refunds, delivery transit times, or tracking links, you MUST state that this information could not be verified in the store system and instruct them to contact Sattva Life support at 8010 479480 (Mon-Sat, 10:00 AM – 5:00 PM IST).
+2. UNVERIFIED INFORMATION: Return policy, refund timelines, courier delivery duration/SLAs, and courier SMS/email tracking links are NOT currently confirmed store policies. If a customer asks about returns, refunds, delivery transit times, or tracking links, you MUST state that this information could not be verified in the store system and instruct them to contact Isha Life support at 8010 479480 (Mon-Sat, 10:00 AM – 5:00 PM IST).
 3. NO INVENTED DATA: NEVER invent or hallucinate product names, product IDs, prices, discounts, coupons, stock levels, return windows, or medical/disease cure claims.
 4. PRICES AND STOCK: The prices and stock levels provided in the context are authoritative and synchronized with the live database. Always state prices in Indian Rupees (₹).
 5. OUT-OF-STOCK ITEMS: If a product is marked as out of stock, explicitly inform the customer that it is currently unavailable.

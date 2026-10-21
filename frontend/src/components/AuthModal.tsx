@@ -49,7 +49,7 @@ export default function AuthModal({ open, onClose }: AuthModalProps) {
         ) : (
           <>
             <div className="mb-6 pt-3">
-              <p className="text-xs font-medium uppercase tracking-[0.16em] text-primary-500">Sattva Life account</p>
+              <p className="text-xs font-medium uppercase tracking-[0.16em] text-primary-500">Isha Life account</p>
               <h2 className="mt-2 font-serif text-3xl font-semibold text-primary-900">{mode === 'signin' ? 'Welcome back' : 'Create your account'}</h2>
               <p className="mt-2 text-sm leading-relaxed text-primary-500">Save orders, track deliveries, and keep your everyday essentials close.</p>
             </div>

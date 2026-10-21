@@ -1,6 +1,6 @@
-# Sattva Life — Database Architecture & Migrations
+# Isha Life — Database Architecture & Migrations (Unofficial Demonstration)
 
-This folder organizes all database-related assets, migrations, schema definitions, and seed scripts for the Sattva Life PostgreSQL / Supabase database.
+This folder organizes all database-related assets, migrations, schema definitions, and seed scripts for the Isha Life PostgreSQL / Supabase database.
 
 ---
 

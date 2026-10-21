@@ -1,4 +1,4 @@
-# Sattva Life — Implementation Plan & Roadmap
+# Isha Life — Implementation Plan & Roadmap (Unofficial Demonstration)
 
 ## Phase Overview
 

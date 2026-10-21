@@ -1,7 +1,7 @@
-# Sattva Life — Architecture & Project Structure
+# Isha Life — Architecture & Project Structure (Unofficial Demonstration)
 
 ## 1. Overview
-Sattva Life is an e-commerce platform dedicated to holistic living, natural wellness, and yogic essentials. It is architected as a clean modern monorepo separating:
+Isha Life (Unofficial Demonstration) is an e-commerce platform dedicated to holistic living, natural wellness, and yogic essentials. It is architected as a clean modern monorepo separating:
 - **`frontend/`**: Single Page Application (SPA) built with React 18, TypeScript 5, Vite 5, and Tailwind CSS.
 - **`backend/`**: Managed BaaS services (Supabase PostgreSQL, PostgREST, Auth).
 - **`database/`**: Canonical schema definitions, SQL migrations, and catalog seed scripts.

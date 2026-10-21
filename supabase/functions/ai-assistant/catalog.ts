@@ -1,5 +1,5 @@
 /**
- * Sattva Life Product Catalogue & Real-Time Inventory Synchronizer.
+ * Isha Life Product Catalogue & Real-Time Inventory Synchronizer.
  *
  * Rules:
  * - Product metadata is authoritative from verified catalogue.

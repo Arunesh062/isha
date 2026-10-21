@@ -1,4 +1,4 @@
-# Sattva Life — Gemini AI Integration Specification (Phase 2)
+# Isha Life — Gemini AI Integration Specification (Phase 2, Unofficial Demonstration)
 
 ## 1. Overview & Objectives
 
@@ -139,7 +139,7 @@ npx supabase functions deploy ai-assistant --no-verify-jwt
   "message": "Which tea do you recommend for boosting immunity?",
   "history": [
     { "role": "user", "content": "Hello" },
-    { "role": "model", "content": "Namaste! Welcome to Sattva Life. How may I assist you today?" }
+    { "role": "model", "content": "Namaste! Welcome to Isha Life. How may I assist you today?" }
   ],
   "productId": "fw-001"
 }

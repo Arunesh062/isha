@@ -193,7 +193,7 @@ export async function interpretNaturalLanguageSearch(
   model?: string,
   fetchFn?: typeof fetch
 ): Promise<SearchQueryInterpretation> {
-  const systemInstruction = `You are an expert e-commerce search query interpreter for Sattva Life, an Ayurvedic and yogic wellness store.
+  const systemInstruction = `You are an expert e-commerce search query interpreter for Isha Life, an Ayurvedic and yogic wellness store.
 Analyze the customer's search query and extract structured search parameters into JSON.
 
 Allowed categories (strictly one of these strings, or null if query spans multiple categories or is general):

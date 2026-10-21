@@ -1,5 +1,5 @@
 -- ====================================================================
--- Sattva Life Seed Data: Categories and Products
+-- Isha Life Seed Data: Categories and Products (Unofficial Demonstration)
 -- ====================================================================
 
 -- 1. Categories

@@ -38,7 +38,7 @@ const SUGGESTED_QUESTIONS = [
 const WELCOME_MESSAGE: ChatMessageItem = {
   id: 'welcome-msg',
   sender: 'assistant',
-  text: 'Namaste! 🙏 I am your Sattva Life AI Shopping & Wellness Concierge. I can help you discover authentic Ayurvedic supplements, natural body care, yoga essentials, and handcrafted copperware, or clarify our verified shipping and store policies.\n\nHow may I support your wellbeing journey today?',
+  text: 'Namaste! 🙏 I am your Isha Life AI Shopping & Wellness Concierge. I can help you discover authentic Ayurvedic supplements, natural body care, yoga essentials, and handcrafted copperware, or clarify our verified shipping and store policies.\n\nHow may I support your wellbeing journey today?',
   timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
 };
 
@@ -156,7 +156,7 @@ export default function AiChatPanel({ onViewProduct, currentProductId }: AiChatP
         <button
           onClick={() => setIsOpen(true)}
           className="fixed bottom-6 right-6 z-40 flex items-center gap-2.5 bg-gradient-to-r from-primary-700 to-primary-800 text-white px-4 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
-          aria-label="Open Sattva Life AI Assistant"
+          aria-label="Open Isha Life AI Assistant"
           aria-expanded={false}
         >
           <div className="relative flex items-center justify-center">
@@ -164,7 +164,7 @@ export default function AiChatPanel({ onViewProduct, currentProductId }: AiChatP
             <span className="absolute -top-1 -right-1 w-2 h-2 bg-sage-400 rounded-full" />
           </div>
           <span className="font-serif text-sm font-semibold tracking-wide pr-1">
-            Ask Sattva AI
+            Ask Isha Life AI
           </span>
         </button>
       )}
@@ -174,7 +174,7 @@ export default function AiChatPanel({ onViewProduct, currentProductId }: AiChatP
         <div
           role="dialog"
           aria-modal="true"
-          aria-label="Sattva Life AI Shopping Assistant"
+          aria-label="Isha Life AI Shopping Assistant"
           className="fixed bottom-4 right-4 left-4 sm:left-auto sm:w-[420px] h-[min(540px,calc(100vh-5rem))] max-h-[calc(100vh-5rem)] z-50 bg-warmwhite rounded-lg shadow-2xl border border-primary-200/90 flex flex-col overflow-hidden animate-scale-in"
         >
           {/* Header */}
@@ -185,7 +185,7 @@ export default function AiChatPanel({ onViewProduct, currentProductId }: AiChatP
               </div>
               <div>
                 <h3 className="font-serif text-base font-semibold leading-none tracking-wide text-cream">
-                  Sattva Wellness Concierge
+                  Isha Wellness Concierge
                 </h3>
                 <div className="flex items-center gap-1.5 mt-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-sage-400 animate-pulse" />
@@ -218,7 +218,7 @@ export default function AiChatPanel({ onViewProduct, currentProductId }: AiChatP
           <div className="bg-primary-50/80 border-b border-primary-100 px-3.5 py-1.5 flex items-center justify-between text-[11px] text-primary-600 shrink-0">
             <div className="flex items-center gap-1.5">
               <ShieldCheck className="w-3.5 h-3.5 text-sage-600" />
-              <span>Grounded in verified Sattva inventory</span>
+              <span>Grounded in verified Isha Life inventory</span>
             </div>
             <span className="text-[10px] text-primary-400">Support: 8010 479480</span>
           </div>
@@ -309,7 +309,7 @@ export default function AiChatPanel({ onViewProduct, currentProductId }: AiChatP
                     <span className="w-2 h-2 rounded-full bg-primary-600 animate-bounce" style={{ animationDelay: '300ms' }} />
                   </div>
                   <span className="text-xs text-primary-500 font-serif italic">
-                    Consulting Sattva catalogue...
+                    Consulting Isha Life catalogue...
                   </span>
                 </div>
               </div>

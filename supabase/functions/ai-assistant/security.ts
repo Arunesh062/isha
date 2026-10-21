@@ -1,5 +1,5 @@
 /**
- * Security & Defense-in-Depth for Sattva Life AI Assistant.
+ * Security & Defense-in-Depth for Isha Life AI Assistant.
  *
  * Responsibilities:
  * - CORS origin verification and preflight handling.
@@ -277,7 +277,7 @@ export function checkPromptSafetyAndPermissions(text: string): { safe: boolean; 
     if (pattern.test(lower)) {
       return {
         safe: false,
-        reason: 'I am the Sattva Life shopping assistant. I cannot override store guidelines or security policies. I am here to assist you with wellness products and verified store information.',
+        reason: 'I am the Isha Life shopping assistant. I cannot override store guidelines or security policies. I am here to assist you with wellness products and verified store information.',
       };
     }
   }

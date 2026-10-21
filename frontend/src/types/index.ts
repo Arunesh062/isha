@@ -1,4 +1,4 @@
-// Domain Types for Sattva Life Store
+// Domain Types for Isha Life Store
 
 export interface Product {
   id: string;

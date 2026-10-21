@@ -24,7 +24,7 @@ function assert(condition, message) {
   }
 }
 
-console.log('=== Running Sattva Life Phase 1 Automated Checks ===\n');
+console.log('=== Running Isha Life Phase 1 Automated Checks ===\n');
 
 // 1. Verify 24 products in products.ts
 const productsContent = fs.readFileSync(productsFile, 'utf8');

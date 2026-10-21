@@ -185,7 +185,7 @@ export default function ShopPage({ target, onView }: ShopPageProps) {
         {/* Page Heading */}
         <div className="mb-8 border-b border-primary-100 pb-6">
           <p className="text-xs font-medium uppercase tracking-[0.16em] text-primary-500">
-            {isSearchTarget ? 'Intelligent Search' : 'Sattva Life catalogue'}
+            {isSearchTarget ? 'Intelligent Search' : 'Isha Life catalogue'}
           </p>
           <h1 className="mt-2 font-serif text-3xl md:text-4xl font-semibold text-primary-900">
             {isSearchTarget
@@ -194,7 +194,7 @@ export default function ShopPage({ target, onView }: ShopPageProps) {
           </h1>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-primary-600">
             {isSearchTarget
-              ? 'Results interpreted through Sattva Life natural language search and inventory validation.'
+              ? 'Results interpreted through Isha Life natural language search and inventory validation.'
               : category?.description ?? 'Explore products inspired by natural living and everyday wellbeing.'}
           </p>
         </div>

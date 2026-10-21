@@ -1,7 +1,7 @@
-# Sattva Life — Backend Architecture
+# Isha Life — Backend Architecture (Unofficial Demonstration)
 
 ## Overview
-Sattva Life utilizes **Supabase** as its primary Backend-as-a-Service (BaaS). Rather than maintaining a redundant Node.js/Express server layer, core backend functionalities are handled natively, securely, and scalably through Supabase services:
+Isha Life utilizes **Supabase** as its primary Backend-as-a-Service (BaaS). Rather than maintaining a redundant Node.js/Express server layer, core backend functionalities are handled natively, securely, and scalably through Supabase services:
 
 1. **Database & API (PostgreSQL + PostgREST)**:
    - Automated REST API for data access with Row-Level Security (RLS) enforcement.

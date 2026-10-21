@@ -1,5 +1,5 @@
 /**
- * Frontend AI Integration Unit Tests for Sattva Life (Phase 3).
+ * Frontend AI Integration Unit Tests for Isha Life (Phase 3).
  *
  * Covers:
  * 1. Chat request and response handling via aiService.

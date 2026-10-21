@@ -1,5 +1,5 @@
 /**
- * Sattva Life — AI Assistant Request and Response Contracts
+ * Isha Life — AI Assistant Request and Response Contracts
  * Shared type definitions for frontend and backend integration.
  */
 

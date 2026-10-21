@@ -1,5 +1,5 @@
 /**
- * Automated Test Suite for Sattva Life AI Assistant (Phase 2).
+ * Automated Test Suite for Isha Life AI Assistant (Phase 2).
  *
  * Tests all 13 required scenarios + CORS & Chat grounding:
  * 1. Missing Gemini secret
@@ -426,7 +426,7 @@ test('9. Questions about unavailable return policies state information cannot be
     candidates: [{
       content: {
         parts: [{
-          text: 'Information regarding Sattva Life return and refund policies could not be verified in the store system at this time. Please contact our dedicated customer support team at 8010 479480 (Monday to Saturday, 10:00 AM – 5:00 PM IST) for direct assistance.',
+          text: 'Information regarding Isha Life return and refund policies could not be verified in the store system at this time. Please contact our dedicated customer support team at 8010 479480 (Monday to Saturday, 10:00 AM – 5:00 PM IST) for direct assistance.',
         }],
       },
     }],

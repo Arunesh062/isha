@@ -1,5 +1,5 @@
 /**
- * Structured knowledge base for Sattva Life.
+ * Structured knowledge base for Isha Life.
  *
  * Categorized strictly into:
  * 1. VERIFIED_KNOWLEDGE (ownerApproved: true) - verified against storefront UI copy, trust badges, footer, and checkout logic.
@@ -63,7 +63,7 @@ export const VERIFIED_FAQS: KnowledgeEntry[] = [
     id: 'faq-natural-organic',
     topic: 'Products',
     question: 'Are your products natural and organic?',
-    answer: 'All Sattva Life products are formulated with natural ingredients free of harsh synthetic chemicals. Products that are certified organic carry clear certification badges and details on their product pages.',
+    answer: 'All Isha Life products are formulated with natural ingredients free of harsh synthetic chemicals. Products that are certified organic carry clear certification badges and details on their product pages.',
     ownerApproved: true,
     sourceReference: 'TrustBadges.tsx ("100% Certified Organic")',
   },

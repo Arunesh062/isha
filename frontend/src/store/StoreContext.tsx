@@ -30,8 +30,16 @@ function loadFromStorage<T>(key: string, fallback: T): T {
 }
 
 export function StoreProvider({ children }: { children: ReactNode }) {
-  const [cart, setCart] = useState<CartItem[]>(() => loadFromStorage('sattva-cart', []));
-  const [wishlist, setWishlist] = useState<string[]>(() => loadFromStorage('sattva-wishlist', []));
+  const [cart, setCart] = useState<CartItem[]>(() => {
+    const isha = loadFromStorage<CartItem[]>('ishalife-cart', []);
+    if (isha && isha.length > 0) return isha;
+    return loadFromStorage('sattva-cart', []);
+  });
+  const [wishlist, setWishlist] = useState<string[]>(() => {
+    const isha = loadFromStorage<string[]>('ishalife-wishlist', []);
+    if (isha && isha.length > 0) return isha;
+    return loadFromStorage('sattva-wishlist', []);
+  });
   const [stockByProductId, setStockByProductId] = useState<Record<string, number>>({});
   const [stockLoading, setStockLoading] = useState(true);
   const [stockError, setStockError] = useState('');
@@ -51,11 +59,15 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('sattva-cart', JSON.stringify(cart));
+    const serialized = JSON.stringify(cart);
+    localStorage.setItem('ishalife-cart', serialized);
+    localStorage.setItem('sattva-cart', serialized);
   }, [cart]);
 
   useEffect(() => {
-    localStorage.setItem('sattva-wishlist', JSON.stringify(wishlist));
+    const serialized = JSON.stringify(wishlist);
+    localStorage.setItem('ishalife-wishlist', serialized);
+    localStorage.setItem('sattva-wishlist', serialized);
   }, [wishlist]);
 
   const addToCart = (product: Product, quantity = 1) => {

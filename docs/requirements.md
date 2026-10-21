@@ -1,4 +1,4 @@
-# Sattva Life — Requirements Specification
+# Isha Life — Requirements Specification (Unofficial Demonstration)
 
 ## 1. Functional Requirements
 

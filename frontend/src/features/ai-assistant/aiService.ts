@@ -1,5 +1,5 @@
 /**
- * Frontend AI Service for Sattva Life.
+ * Frontend AI Service for Isha Life.
  *
  * Interacts with the Supabase Edge Function 'ai-assistant'.
  * Rules:

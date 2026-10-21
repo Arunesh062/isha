@@ -1,5 +1,5 @@
 /**
- * Core Request Processing Pipeline for Sattva Life AI Assistant.
+ * Core Request Processing Pipeline for Isha Life AI Assistant.
  *
  * Handles CORS, envelope validation, authentication, rate limiting,
  * schema validation, Gemini invocation, and database-verified response formatting.
